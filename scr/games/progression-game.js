@@ -1,6 +1,6 @@
-import startGame from '../scr/index.js';
-import getRandomNumber from '../scr/getRandomNumber.js';
-import getRandomElement from '../scr/getRandomElement.js';
+import startGame from '../index.js';
+import getRandomNumber from '../helpers/getRandomNumber.js';
+import getRandomElementFromArray from '../helpers/getRandomElement.js';
 
 const gameQuestion = 'What number is missing in the progression?';
 
@@ -17,7 +17,7 @@ const gameInfo = () => {
   const step = getRandomNumber(2, 6);
   const length = getRandomNumber(5, 11);
   const progression = getProgression(firsElement, step, length);
-  const randomElement = getRandomElement(progression);
+  const randomElement = getRandomElementFromArray(progression);
   const index = progression.indexOf(randomElement);
   const symbol = '..';
   progression[index] = symbol;

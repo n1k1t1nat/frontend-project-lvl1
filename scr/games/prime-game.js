@@ -1,15 +1,15 @@
-import startGame from '../scr/index.js';
-import getRandomNumber from '../scr/getRandomNumber.js';
+import startGame from '../index.js';
+import getRandomNumber from '../helpers/getRandomNumber.js';
 
 const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
-  let dividor = 2;
-  while (dividor <= number / 2) {
-    if (number % dividor === 0) {
+  let divider = 2;
+  while (divider <= number / 2) {
+    if (number % divider === 0) {
       return false;
     }
-    dividor += 1;
+    divider += 1;
   }
   return true;
 };
