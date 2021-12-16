@@ -1,7 +1,8 @@
 import startGame from '../index.js';
 import getRandomNumber from '../helpers/getRandomNumber.js';
 
-const gameQuestion = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
+const roundCount = 3;
 
 const getCommonDivisor = (num1, num2) => {
   const iter = (d) => {
@@ -13,14 +14,21 @@ const getCommonDivisor = (num1, num2) => {
   return iter(num1);
 };
 
-const gameInfo = () => {
-  const num1 = getRandomNumber(1, 100);
-  const num2 = getRandomNumber(1, 100);
-  const question = `${num1} ${num2}`;
-  const answer = String(getCommonDivisor(num1, num2));
-  return [question, answer];
+const rounds = () => {
+  const result = [];
+  for (let i = 1; result.length < roundCount; i += 1) {
+    const num1 = getRandomNumber(1, 100);
+    const num2 = getRandomNumber(1, 100);
+    const question = `${num1} ${num2}`;
+    const answer = String(getCommonDivisor(num1, num2));
+    result.push([question, answer]);
+  }
+  return result;
 };
 
-const brainGcd = () => startGame(gameQuestion, gameInfo);
+const brainGcd = () => {
+  const gameRounds = rounds();
+  startGame(description, gameRounds);
+};
 
 export default brainGcd;

@@ -2,7 +2,8 @@ import startGame from '../index.js';
 import getRandomNumber from '../helpers/getRandomNumber.js';
 import getRandomElementFromArray from '../helpers/getRandomElement.js';
 
-const gameQuestion = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
+const roundCount = 3;
 
 const operators = ['+', '-', '*'];
 
@@ -20,15 +21,22 @@ const calculateResult = (operator, num1, num2) => {
   }
 };
 
-const gameInfo = () => {
-  const num1 = getRandomNumber(1, 30);
-  const num2 = getRandomNumber(1, 30);
-  const operator = getRandomElementFromArray(operators);
-  const question = `${num1} ${operator} ${num2}`;
-  const answer = String(calculateResult(operator, num1, num2));
-  return [question, answer];
+const rounds = () => {
+  const result = [];
+  for (let i = 1; result.length < roundCount; i += 1) {
+    const num1 = getRandomNumber(1, 30);
+    const num2 = getRandomNumber(1, 30);
+    const operator = getRandomElementFromArray(operators);
+    const question = `${num1} ${operator} ${num2}`;
+    const answer = String(calculateResult(operator, num1, num2));
+    result.push([question, answer]);
+  }
+  return result;
 };
 
-const brainCalc = () => startGame(gameQuestion, gameInfo);
+const brainCalc = () => {
+  const gameRounds = rounds();
+  startGame(description, gameRounds);
+};
 
 export default brainCalc;

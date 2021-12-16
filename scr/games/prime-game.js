@@ -1,7 +1,8 @@
 import startGame from '../index.js';
 import getRandomNumber from '../helpers/getRandomNumber.js';
 
-const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const roundCount = 3;
 
 const isPrime = (number) => {
   if (number < 2) {
@@ -17,10 +18,19 @@ const isPrime = (number) => {
   return true;
 };
 
-const gameInfo = () => {
-  const question = getRandomNumber(1, 100);
-  const answer = isPrime(question) ? 'yes' : 'no';
-  return [question, answer];
+const rounds = () => {
+  const result = [];
+  for (let i = 1; result.length < roundCount; i += 1) {
+    const question = getRandomNumber(1, 100);
+    const answer = isPrime(question) ? 'yes' : 'no';
+    result.push([question, answer]);
+  }
+  return result;
 };
-const brainPrime = () => startGame(gameQuestion, gameInfo);
+
+const brainPrime = () => {
+  const gameRounds = rounds();
+  startGame(description, gameRounds);
+};
+
 export default brainPrime;

@@ -1,14 +1,24 @@
 import startGame from '../index.js';
 import getRandomNumber from '../helpers/getRandomNumber.js';
 
-const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
-
 const isEven = (number) => (number % 2 === 0);
 
-const gameInfo = () => {
-  const question = getRandomNumber(1, 100);
-  const answer = isEven(question) ? 'yes' : 'no';
-  return [question, answer];
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+const roundCount = 3;
+
+const rounds = () => {
+  const result = [];
+  for (let i = 1; result.length < roundCount; i += 1) {
+    const question = getRandomNumber(1, 100);
+    const answer = isEven(question) ? 'yes' : 'no';
+    result.push([question, answer]);
+  }
+  return result;
 };
-const brainEven = () => startGame(gameQuestion, gameInfo);
+
+const brainEven = () => {
+  const gameRounds = rounds();
+  startGame(description, gameRounds);
+};
+
 export default brainEven;

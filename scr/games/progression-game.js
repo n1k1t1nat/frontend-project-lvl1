@@ -2,7 +2,8 @@ import startGame from '../index.js';
 import getRandomNumber from '../helpers/getRandomNumber.js';
 import getRandomElementFromArray from '../helpers/getRandomElement.js';
 
-const gameQuestion = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
+const roundCount = 3;
 
 const getProgression = (firstElement, step, length) => {
   const progression = [];
@@ -12,20 +13,27 @@ const getProgression = (firstElement, step, length) => {
   return progression;
 };
 
-const gameInfo = () => {
-  const firsElement = getRandomNumber(1, 20);
-  const step = getRandomNumber(2, 6);
-  const length = getRandomNumber(5, 11);
-  const progression = getProgression(firsElement, step, length);
-  const randomElement = getRandomElementFromArray(progression);
-  const index = progression.indexOf(randomElement);
-  const symbol = '..';
-  progression[index] = symbol;
-  const question = `${progression.join(' ')}`;
-  const answer = String(randomElement);
-  return [question, answer];
+const rounds = () => {
+  const result = [];
+  for (let i = 1; result.length < roundCount; i += 1) {
+    const firsElement = getRandomNumber(1, 20);
+    const step = getRandomNumber(2, 6);
+    const length = getRandomNumber(5, 11);
+    const progression = getProgression(firsElement, step, length);
+    const randomElement = getRandomElementFromArray(progression);
+    const index = progression.indexOf(randomElement);
+    const symbol = '..';
+    progression[index] = symbol;
+    const question = `${progression.join(' ')}`;
+    const answer = String(randomElement);
+    result.push([question, answer]);
+  }
+  return result;
 };
 
-const brainProgression = () => startGame(gameQuestion, gameInfo);
+const brainProgression = () => {
+  const gameRounds = rounds();
+  startGame(description, gameRounds);
+};
 
 export default brainProgression;
