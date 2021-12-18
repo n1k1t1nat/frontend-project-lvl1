@@ -18,36 +18,36 @@ These are 5 math action games. Each game asks questions. You win if you answer t
 
 Clone this repository
 
-Run the command: make install
+Run the command: `make install`
 
-Run the command: npm link
+Run the command: `npm link`
 
 ### Brain-evan game
 
-Run the command: brain-even
+Run the command: `brain-even`
 
 [![asciicast](https://asciinema.org/a/453725.svg)](https://asciinema.org/a/453725)
 
 ### Brain-calc game
 
-Run the command: brain-calc
+Run the command: `brain-calc`
 
 [![asciicast](https://asciinema.org/a/pbrHgM4xSb0ROUS8H5hfJVRaY.svg)](https://asciinema.org/a/pbrHgM4xSb0ROUS8H5hfJVRaY)
 
 ### Brain-gcd game
 
-Run the command: brain-gcd
+Run the command: `brain-gcd`
 
 [![asciicast](https://asciinema.org/a/WWlSH7dlcOwOH2i1IizUaWJ8e.svg)](https://asciinema.org/a/WWlSH7dlcOwOH2i1IizUaWJ8e)
 
 ### Brain-progression game
 
-Run the command: brain-progression
+Run the command: `brain-progression`
 
 [![asciicast](https://asciinema.org/a/tL8hvCMNs0A5VJ3gS4idRNKRr.svg)](https://asciinema.org/a/tL8hvCMNs0A5VJ3gS4idRNKRr)
 
 ### Brain-prime game
 
-Run the command: brain-prime
+Run the command: `brain-prime`
 
 [![asciicast](https://asciinema.org/a/vD9a98G6malXfV2263mxhGQvV.svg)](https://asciinema.org/a/vD9a98G6malXfV2263mxhGQvV)

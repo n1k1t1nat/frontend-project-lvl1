@@ -1,8 +1,7 @@
-import startGame from '../index.js';
+import startGame, { roundCount } from '../index.js';
 import getRandomNumber from '../helpers/getRandomNumber.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
-const roundCount = 3;
 
 const getCommonDivisor = (num1, num2) => {
   const iter = (d) => {

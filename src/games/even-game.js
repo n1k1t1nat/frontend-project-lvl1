@@ -1,10 +1,9 @@
-import startGame from '../index.js';
+import startGame, { roundCount } from '../index.js';
 import getRandomNumber from '../helpers/getRandomNumber.js';
 
 const isEven = (number) => (number % 2 === 0);
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
-const roundCount = 3;
 
 const rounds = () => {
   const result = [];

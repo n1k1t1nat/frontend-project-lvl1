@@ -1,9 +1,8 @@
-import startGame from '../index.js';
+import startGame, { roundCount } from '../index.js';
 import getRandomNumber from '../helpers/getRandomNumber.js';
 import getRandomElementFromArray from '../helpers/getRandomElement.js';
 
 const description = 'What is the result of the expression?';
-const roundCount = 3;
 
 const operators = ['+', '-', '*'];
 

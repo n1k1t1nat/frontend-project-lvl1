@@ -1,8 +1,7 @@
-import startGame from '../index.js';
+import startGame, { roundCount } from '../index.js';
 import getRandomNumber from '../helpers/getRandomNumber.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const roundCount = 3;
 
 const isPrime = (number) => {
   if (number < 2) {
